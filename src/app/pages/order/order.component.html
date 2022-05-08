@@ -1,0 +1,3 @@
+<mat-list role="list">
+    <mat-list-item [ngClass]="(order.orderId).includes('6')? 'special':''" role="listitem" *ngFor="let order of orderService.listOrders() | async">{{ order.orderId }} - {{(order.orderDate | dateFormat)}} - {{ cartService.calculateValue(order.cart) }} HUF</mat-list-item>
+</mat-list>

@@ -1,0 +1,14 @@
+
+
+<mat-card *ngIf="(cartService.getCartForUser() | async ) as cart; else empty" fxLayout="column" fxLayoutAlign="center">
+    <mat-card *ngFor="let cartItem of cart.carpetsInCart">
+        <p>{{cartItem.item.name}} - {{cartItem.item.priceInHuf}} HUF - {{cartItem.count}}x</p>
+        <mat-icon (click)="removeCartItem(cartItem)">delete</mat-icon>
+    </mat-card>
+    <mat-card-content class="summary-text">Summary: {{ cartService.calculateValue(cart)}} HUF</mat-card-content>
+    <button *ngIf="(loggedInUser)" mat-button (click)="makeOrder()">Make order</button>
+</mat-card>
+
+<ng-template #empty>
+    Empty cart
+</ng-template>

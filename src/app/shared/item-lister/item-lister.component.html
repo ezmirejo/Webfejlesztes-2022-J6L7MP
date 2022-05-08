@@ -1,0 +1,5 @@
+<div fxLayout="row wrap" fxLayoutAlign="start">
+    <div *ngFor="let carpetInArray of carpetService.loadCarpetData() |async">
+        <app-item  [carpet]="carpetInArray" (addToCartEvent)="addToCart($event)"></app-item>
+    </div>
+</div>

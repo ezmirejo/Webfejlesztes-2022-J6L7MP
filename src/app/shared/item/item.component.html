@@ -1,0 +1,19 @@
+<mat-card class="item-card" fxLayout="column" fxLayoutAlign="center">
+    <mat-card-header [ngClass]="(carpet.height == 150)? 'dark-colors':''">
+        <mat-card-title>{{ carpet.name }}</mat-card-title>
+        <mat-card-subtitle>{{ carpet.type }} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="carpet-image" src="{{carpet.imageUrl}}" alt="Photo of carpet">
+    <mat-card-content>
+        <p>Height: {{carpet.height}} cm, Width: {{ carpet.width}} cm</p>
+        <p>Price: {{ carpet.priceInHuf }} HUF</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <form [formGroup]="countForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <input matInput type="number" formControlName="count" value="1"/>
+            </mat-form-field>
+            <button mat-button>Add to cart</button>
+        </form>
+    </mat-card-actions>
+</mat-card>

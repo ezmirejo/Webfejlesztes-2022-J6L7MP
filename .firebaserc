@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "aladdin-webshop-webfejl-64365": {
+      "hosting": {
+        "J6L7MP-Webfejl": [
+          "aladdin-webshop-webfejl-64365"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "aladdin-webshop-webfejl-64365"
+  }
+}
